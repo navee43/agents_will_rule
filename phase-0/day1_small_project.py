@@ -24,7 +24,7 @@ def add_messages(role , content):
         "content": content
     }
     messages.append(message)
-print("message added successfully")
+    print("message added successfully")
 
 
 def display_history():
@@ -48,10 +48,10 @@ def get_user_messages():
 def get_recent_messages(n):
     if(n<0):
         print("enter Positive no")
-        return
+        return []
     elif (n==0) :
         print("enter valid no")
-        return
+        return []
     return messages[-n:]
 
 
@@ -98,7 +98,7 @@ while True:
         try:
              p = int(input("how many last msg you want "))
              print(get_recent_messages(p))
-        except valueError:
+        except ValueError:
             print("enter a valid no")
 
     elif choice == "5":
