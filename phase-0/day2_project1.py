@@ -1,46 +1,37 @@
+from storage import save_message, read_history, clear_history
 
 
+def main():
+    while True:
+        print("\n===== Persistent Conversation Logger =====")
+        print("1. Save message")
+        print("2. Read history")
+        print("3. Clear history")
+        print("4. Exit")
 
-# def save_message(role, content):
-#     with open("history.txt","a",encoding="utf-8") as file:
-#      file.write(f"{role} : {content}\n")
-   
+        choice = input("Enter choice: ")
 
+        if choice == "1":
+            role = input("Enter role: ")
+            content = input("Enter message: ")
 
-# def read_history():
-#     with open("history.txt","r",encoding="utf-8") as file:
-#      content = file.read()
-#     return content
+            save_message(role, content)
+            print("Message saved successfully")
 
+        elif choice == "2":
+            print(read_history())
 
-# def clear_history():
-#     with open("history.txt","w",encoding="utf-8") as file:
-#        pass
-  
+        elif choice == "3":
+            clear_history()
+            print("History cleared successfully")
 
+        elif choice == "4":
+            print("Exiting program...")
+            break
 
-
-
-# # clear_history()
-
-# # save_message("user", "What is RAG?")
-# # save_message("assistant", "RAG retrieves relevant information.")
-# # save_message("user", "How does it work?")
-
-# print(read_history())
-
-
-
-
+        else:
+            print("Invalid choice")
 
 
-try:
-    with open("experiment.txt", "w", encoding="utf-8") as file:
-        print("Inside block:", file.closed)
-
-        print(10 / 0)
-
-except ZeroDivisionError:
-    print("An error occurred")
-
-print("Outside block:", file.closed)
+if __name__ == "__main__":
+    main()
