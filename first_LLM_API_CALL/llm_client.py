@@ -29,7 +29,7 @@ def build_payload(prompt, model, temperature):
            "model":model,
            "messages": messages,
             "temperature": temperature,
-            "max_completion_tokens":1000
+            "max_completion_tokens":100
     
             }
 
