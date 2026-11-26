@@ -49,6 +49,11 @@ def extract_profile(res):
     return data
 
 
+headers={
+    "Authorization" :f"Bearer{API_KEYS}",
+    "Content-Type" : "Application/json"
+}
+
 
 
     # Extract required information
